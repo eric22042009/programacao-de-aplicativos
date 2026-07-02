@@ -12,4 +12,3 @@ def cadastrar_serie(nome_serie, id_escola):
         print("Erro: Escola inexistente!")
     finally:
         conexao.close()
-        
