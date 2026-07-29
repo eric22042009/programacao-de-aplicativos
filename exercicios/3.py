@@ -1,4 +1,3 @@
-
 import sqlite3
 
 def criar_tabelas():
@@ -20,9 +19,12 @@ def criar_tabelas():
                 FOREIGN KEY (id_escola)REFERENCES escolas (id)
             )
         ''')
-
     conexao.commit()
     conexao.close()
+
+    print("Tabelas criadas com sucesso!")
+
+criar_tabelas()
 
 # estava dando erro porque estava puxando uma referencia de umna tabela que nao existe
 

@@ -1,0 +1,10 @@
+import sqlite3
+
+def cadastrar_liata_aluno():
+    lista = [("Ana", 1), ("Carlos", 1), ("Beatriz", 2)]
+
+    conexao = sqlite3.connect('sistema_escola.db')
+    cursor = conexao.cursor()
+
+    conexao.commit()
+    conexao.close()
