@@ -25,7 +25,7 @@ def inserir_professor(nome):
     cursor = conexao.cursor()
     cursor.execute(
         "INSERT INTO professores (nome) VALUES (?)",
-        (nome,)
+        ("nome,")
     )
     
     conexao.commit()

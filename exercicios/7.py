@@ -1,14 +1,23 @@
 import sqlite3
 
-def cadastrar_turma(nome,id_serie,id_prof):
+def cadastrar_turma(nome, id_serie, id_prof):
     conexao = sqlite3.connect('sistema_escola.db')
     cursor = conexao.cursor()
-    cursor.execute("PRAGMA foreing_keys = ON;")
+    
+    cursor.execute("PRAGMA foreign_keys = ON;")
+    
     try:
-        cursor.execute("INSERT INTO turmas (nome_turma,id_serie,id_professor) VALUES (?,?,?)"), (nome , id_serie , id_prof)
+       
+        cursor.execute(
+            "INSERT INTO turmas (nome_turma, id_serie, id_professor) VALUES (?, ?, ?)",
+            (nome, id_serie, id_prof)
+        )
         conexao.commit()
+        print("Turma cadastrada com sucesso!")
+        
     except sqlite3.IntegrityError:
-        ("Professor ou série não existe.")
+        print("Professor ou série não existe.")
+        
     finally:
         conexao.close()
 

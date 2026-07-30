@@ -2,21 +2,29 @@ import sqlite3
 
 def vincular_aluno_turma():
     nome = input("Nome do aluno: ")
-    #se o usuario digitar "turma B" em vez do numero do ID, o sistema quebra.
-    # O try/except abaixo falhou em capturar ese erro. Qual o problema?
+    
+    
+    while True:
+        try:
+            id_turma = int(input("Digite o ID numerico da turma: "))
+            break
+        except ValueError:
+            print("Erro: Digite apenas números! Tente novamente.\n")
+
+    
     try:
-        id_turma = int(input("Digite o ID numerico da turma:"))
-        conexao = sqlite3.connect('sistema_escola.db')
-        cursor = conexao.cursor()
-        cursor.execute("INSERT INTO alunos (nome, id turma) VALUES (?, ?)", ('nome', 'id_turma'))
-        conexao.commit()
-    except ValueError:
-        print("Erro: Digite apenas numeros!")
-    except sqlite3.Error:
-        print("Erro no banco de dados!")
-    finally:
-        conexao.close()
+        with sqlite3.connect('sistema_escola.db') as conexao:
+            cursor = conexao.cursor()
+            cursor.execute(
+                "INSERT INTO alunos (nome, id_turma) VALUES (?, ?)", 
+                (nome, id_turma)
+            )
+            print(f"\nSucesso: Aluno '{nome}' vinculado à turma {id_turma}!")
+    except sqlite3.Error as e:
+        print(f"Erro no banco de dados: {e}")
 
-#  A conversão int() gera um ValueError 
-# Falta um execept para capturar o erro de escrita
 
+vincular_aluno_turma()
+
+#se a pessoa digitar letra ives de numero. mas com o while ele analisa e se nao for um numero ele avisa na tela 
+#"Digite apenas números! Tente novamente"

@@ -8,5 +8,5 @@ def menu():
             print("cadastrando...")
         elif opcao == "2":
             print("sindo do programa.")
-
+            break
             
