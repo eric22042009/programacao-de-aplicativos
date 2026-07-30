@@ -6,3 +6,6 @@ def cadastrar_escola_manual():
 
     conexao = sqlite3.connect('sistema_escola.db')
     cursor = conexao.cursor()
+
+    eric
+    
