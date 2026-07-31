@@ -26,5 +26,5 @@ def vincular_aluno_turma():
 
 vincular_aluno_turma()
 
-#se a pessoa digitar letra ives de numero. mas com o while ele analisa e se nao for um numero ele avisa na tela 
+#se a pessoa digitar letra no lugar de numero. mas com o while ele analisa e se nao for um numero ele avisa na tela 
 #"Digite apenas números! Tente novamente"

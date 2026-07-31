@@ -8,3 +8,5 @@ def cadastrar_liata_aluno():
 
     conexao.commit()
     conexao.close()
+
+    

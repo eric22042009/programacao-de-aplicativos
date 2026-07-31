@@ -10,3 +10,4 @@ def menu():
             print("sindo do programa.")
             break
             
+#falto o 'break'
