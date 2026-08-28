@@ -1,4 +1,4 @@
-recado = input("Digite um recado: ")
+recado = input("digite um recado: ")
 
 arquivo = open("avisos.txt", "a")
 

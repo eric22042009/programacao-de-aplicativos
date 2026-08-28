@@ -5,15 +5,15 @@ while True:
     print("2 - Mostrar Turma")
     print("3 - Sair")
 
-    opcao = input("Digite a opção: ")
+    opcao = input("digite a opção: ")
 
     if opcao == "1":
-        nome = input("Digite o nome: ")
-        turma.append(nome)
+        nome = input("digite o nome: ")
+        turma.append(nome)  #ADICIONA OQ ESTA GURDADO NA VARIAVEL
 
     elif opcao == "2":
         n = 1
-        for aluno in turma:
+        for aluno in turma:   #PERCORRE OQ ESTA SALVO ENTRO DA LISTA TURMA 
             print(n, "Aluno:", aluno)
             n += 1
 
